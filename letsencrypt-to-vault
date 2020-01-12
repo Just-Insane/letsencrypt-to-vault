@@ -12,7 +12,7 @@ process_args() {
     fi
 
     if [[ -z $CERTBOT_FLAGS ]]; then
-        CERTBOT_FLAGS="--webroot --webroot-path /webroot-dir --agree-tos --renew-by-default"
+        CERTBOT_FLAGS="--dns-cloudflare --dns-cloudflare-credentials /etc/letsencrypt/credentials/cloudflare.ini --agree-tos"
     fi
 
     while [[ $# -gt 0 ]]
