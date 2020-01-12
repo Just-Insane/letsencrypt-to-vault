@@ -130,7 +130,7 @@ send_to_vault() {
             -H "X-Vault-Token: $VAULT_TOKEN" \
             -H "Content-Type: application/json" \
             -X POST \
-            -d "{\"key\":\"$privkey\", \"cert\": \"$cert\"}" \
+            -d "{\"data\": { \"key\":\"$privkey\", \"cert\": \"$cert\" }}" \
             "$VAULT_ADDR/v1/$VAULT_CERT_PATH/$sitename"
     done
 
